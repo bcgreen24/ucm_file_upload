@@ -26,8 +26,14 @@ function ucm_file_upload_form($form, &$form_state){
        '#title' => t('Choose the file to upload'),
        '#size' => 22,
     );
+    
+    $form['ucm_file_upload_submit'] = array(
+      '#type' => 'submit',
+        '#value' => t('Upload file'),
+    );
     return $form;
 }
+
 
 function ucm_file_upload_perm(){
     return array('upload files');
