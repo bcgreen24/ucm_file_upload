@@ -1,11 +1,17 @@
 <?php
 
+function ucm_file_upload_help($path, $arg){
+    if($path == 'admin/help#ucm_file_upload'){
+        return t('UCM file upload module');
+    }
+}
+
 function ucm_file_upload_menu(){
     $items = array();
     $items['fileupload'] = array(
         'title'=> 'File Upload',
         'description' => 'Upload files',
-        'page callback' => array('drupal_get_form'),
+        'page callback' => 'drupal_get_form',
         'page arguments' => array('ucm_file_upload_form'),
         'access arguments' => array('upload files'),
         'type' => MENU_NORMAL_ITEM,
