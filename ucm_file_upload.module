@@ -1,0 +1,27 @@
+<?php
+
+function ucm_file_upload_menu(){
+    $items = array();
+    $items['fileupload'] = array(
+        'title'=> 'File Upload',
+        'description' => 'Upload files',
+        'page callback' => array('ucm_file_upload_form'),
+        'access arguments' => array('upload files'),
+        'type' => MENU_CALLBACK,
+    );
+    return $items;
+    
+}
+
+function ucm_file_upload_form($form, &$form_state){
+    $form['ucm_file_upload_textfield'] = array(
+    '#type' => 'textfield',
+    '#title' => 'test',
+    );
+}
+
+function ucm_file_upload_perm(){
+    return array('upload files');
+}
+
+?>
