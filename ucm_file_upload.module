@@ -22,8 +22,9 @@ function ucm_file_upload_menu(){
 
 function ucm_file_upload_form($form, &$form_state){
     $form['ucm_file_upload_textfield'] = array(
-    '#type' => 'textfield',
-    '#title' => 'test',
+       '#type' => 'file',
+       '#title' => t('Choose the file to upload'),
+       '#size' => 22,
     );
     return $form;
 }
