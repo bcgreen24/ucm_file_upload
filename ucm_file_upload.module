@@ -34,6 +34,10 @@ function ucm_file_upload_form($form, &$form_state){
     return $form;
 }
 
+function ucm_file_upload_submit($form, &$form_state){
+   $file = $form_state['values']['file'];
+   print_r($file);
+}
 
 function ucm_file_upload_perm(){
     return array('upload files');
