@@ -1,5 +1,6 @@
 ;$Id$
 description = Lightweight module for uploading arbitrary files to the Drupal filesystem
+name = UCM File Uploads
 core = 7.x
 package = ucmerced
 files[] = ucm_file_upload.module
