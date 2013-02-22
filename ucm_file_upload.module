@@ -5,9 +5,10 @@ function ucm_file_upload_menu(){
     $items['fileupload'] = array(
         'title'=> 'File Upload',
         'description' => 'Upload files',
-        'page callback' => array('ucm_file_upload_form'),
+        'page callback' => array('drupal_get_form'),
+        'page arguments' => array('ucm_file_upload_form'),
         'access arguments' => array('upload files'),
-        'type' => MENU_CALLBACK,
+        'type' => MENU_NORMAL_ITEM,
     );
     return $items;
     
@@ -18,6 +19,7 @@ function ucm_file_upload_form($form, &$form_state){
     '#type' => 'textfield',
     '#title' => 'test',
     );
+    return $form;
 }
 
 function ucm_file_upload_perm(){
