@@ -21,14 +21,14 @@ function ucm_file_upload_menu(){
 }
 
 function ucm_file_upload_form($form, &$form_state){
-    $form['ucm_file_upload_file'] = array(
+    $form['file'] = array(
        '#type' => 'file',
        '#title' => t('Choose the file to upload'),
        '#size' => 22,
        '#description' => t('Upload a file to the public directory'),
     );
     
-    $form['ucm_file_upload_submit'] = array(
+    $form['submit'] = array(
       '#type' => 'submit',
         '#value' => t('Upload file'),
     );
@@ -36,12 +36,13 @@ function ucm_file_upload_form($form, &$form_state){
 }
 
 function ucm_file_upload_submit($form, &$form_state){
-//  $file = $form_state['values']['ucm_file_upload_file'];
+//  $file = $form_state['values']['file'];
 //  unset($form_state['values']['ucm_file_upload_file']);
 //  $file->status = FILE_STATUS_PERMANENT;
 //  file_save($file);
 //  drupal_set_message(t('The file has been saved. File: @filename.', array('@filename' => $file->filename)));
-    drupal_set_message('Hello');
+//    drupal_set_message('Hello');
+    drupal_set_message(print_r($form));
 }
 
 function ucm_file_upload_perm(){
