@@ -31,7 +31,8 @@ function ucm_file_upload_form($form, &$form_state){
     $form['submit'] = array(
       '#type' => 'submit',
         '#value' => t('Upload file'),
-    );
+        '#submit' => array('ucm_file_upload_submit'),
+        );
     return $form;
 }
 
