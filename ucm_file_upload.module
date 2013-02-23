@@ -42,7 +42,7 @@ function ucm_file_upload_submit($form, &$form_state){
 //  file_save($file);
 //  drupal_set_message(t('The file has been saved. File: @filename.', array('@filename' => $file->filename)));
 //    drupal_set_message('Hello');
-    drupal_set_message(print_r($form));
+    drupal_set_message(t('hello'));
 }
 
 function ucm_file_upload_perm(){
