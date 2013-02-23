@@ -41,16 +41,12 @@ function ucm_file_upload_submit($form, &$form_state){
     if($file){
         if($file = file_move($file, 'public://')){
             $form_state['values']['file'] = $file;
+            drupal_set_message('Upload complete! Use this URL: ' . $file->filename);
         }
+        else{
+            drupal_set_message('<pre>' . print_r($form_state, true) . '</pre>');
     }
-    drupal_set_message('<pre>' . print_r($form_state, true) . '</pre>');
-    
-    
-    
-  //$file = $form_state['values']['file'];
-  //$file->status = FILE_STATUS_PERMANENT;
-  //file_save($file);
-  //drupal_set_message(t('The file has been saved. File: @filename.', array('@filename' => $file->filename)));
+  }
 }
 
 function ucm_file_upload_perm(){
