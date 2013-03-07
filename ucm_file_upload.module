@@ -41,7 +41,7 @@ function ucm_file_upload_submit($form, &$form_state){
     if($file){
         if($file = file_move($file, 'public://')){
             $form_state['values']['file'] = $file;
-            drupal_set_message('Upload complete! Use this URL: ' . $GLOBALS['base_path'] . '/files/' . $file->filename);
+            drupal_set_message('Upload complete! Use this URL: ' . substr($GLOBALS['base_path'], 7) . '/files/' . $file->filename);
         }
         else{
             drupal_set_message('<pre>' . print_r($form_state, true) . '</pre>');
