@@ -14,9 +14,9 @@ function ucm_file_upload_menu(){
         'page callback' => 'drupal_get_form',
         'page arguments' => array('ucm_file_upload_form'),
         'access arguments' => array('upload files'),
-        'type' => MENU_VISIBLE_IN_BREADCRUMB,
+        'type' => MENU_CALLBACK,
     );
-    drupal_set_title('File Upload',PASS_THROUGH) ;
+    drupal_set_title('File Upload') ;
     return $items;
     
 }
@@ -34,6 +34,7 @@ function ucm_file_upload_form($form, &$form_state){
         '#value' => t('Upload file'),
         '#submit' => array('ucm_file_upload_submit'),
         );
+        drupal_set_title('File Upload') ;
     return $form;
 }
 
