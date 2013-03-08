@@ -16,6 +16,7 @@ function ucm_file_upload_menu(){
         'access arguments' => array('upload files'),
         'type' => MENU_VISIBLE_IN_BREADCRUMB,
     );
+    drupal_set_title('File Upload',PASS_THROUGH) ;
     return $items;
     
 }
