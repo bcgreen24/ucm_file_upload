@@ -30,6 +30,22 @@ function ucm_file_upload_form($form, &$form_state){
        '#description' => t('Upload a file to the public directory'),
     );
     
+    $form['file'] = array(
+       '#name' => 'files[]',
+       '#type' => 'file',
+       '#title' => t('Choose the file to upload'),
+       '#size' => 22,
+       '#description' => t('Upload a file to the public directory'),
+    );
+    
+    $form['file'] = array(
+       '#name' => 'files[]',
+       '#type' => 'file',
+       '#title' => t('Choose the file to upload'),
+       '#size' => 22,
+       '#description' => t('Upload a file to the public directory'),
+    );
+    
     $form['submit'] = array(
        '#type' => 'submit',
         '#value' => t('Upload files'),
