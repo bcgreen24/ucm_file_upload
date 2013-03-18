@@ -60,7 +60,7 @@ function ucm_file_upload_submit($form, &$form_state){
     
     foreach($form_state['complete form'] as $file){
         if($file['#type'] == 'file'){
-            $message .= $file['#parents'] . "<br/>";
+            $message .= $file['#parents'][0] . "<br/>";
         }
 
     }
