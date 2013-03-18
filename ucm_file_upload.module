@@ -59,7 +59,7 @@ function ucm_file_upload_submit($form, &$form_state){
     $message = "";
     foreach($form_state[0] as $form){
       
-          $message .= $form[0];
+          $message .= $form;
 
     }
     //foreach($form_state['values']['files'] as $file){
