@@ -4,7 +4,8 @@
  */
 
 $(document).ready(function(){
-   $('#edit-add-button').click(function(){
+   $('#edit-add-button').click(function(event){
+       event.preventDefault();
        alert('hello');
    })
 });
