@@ -15,6 +15,13 @@ function reArrayFiles(&$file_post) {
     return $file_ary;
 }
 
+function ucm_file_upload_init(){
+    $rid1 = array_search('content editor', user_roles());
+    user_role_grant_permissions($rid1, 'upload files');
+    $rid2 = array_search('site manager', user_roles());
+    user_role_grant_permissions($rid2, 'upload files');
+}
+
 function ucm_file_upload_help($path, $arg){
     if($path == 'admin/help#ucm_file_upload'){
         return t('UCM file upload module');
@@ -147,18 +154,21 @@ function ucm_file_upload_permission(){
 /**
  * Implements hook_user_default_permissions().
  */
-function ucm_file_upload_user_default_permissions_alter() {
-  $permissions = array();
-  // Exported permission: upload files.
-  $permissions['upload files'] = array(
-    'name' => 'upload files',
-    'roles' => array(
-      0 => 'administrator',
-      1 => 'site manager',
-      2 => 'content editor',
-    ),
-    'module' => 'ucm_file_upload',
-  );
 
-  return $permissions;
-}
+
+
+//function ucm_file_upload_user_default_permissions() {
+//  $permissions = array();
+//  // Exported permission: upload files.
+//  $permissions['upload files'] = array(
+//    'name' => 'upload files',
+//    'roles' => array(
+//      0 => 'administrator',
+//      1 => 'site manager',
+//      2 => 'content editor',
+//    ),
+//    'module' => 'ucm_file_upload',
+//  );
+//
+//  return $permissions;
+//}
