@@ -67,7 +67,7 @@ function ucm_file_upload_submit($form, &$form_state){
                    $message .= "File uploaded! Use this URL: /files/" . $file2->filename . "<br/>";                   
                 }
             }else{
-              $message .= "Error uploading file; please try again later.<br/>" ; 
+              $message .= "Error uploading file [" . $file['#parents'][0] . "]; please try again later.<br/>" ; 
             }
             //$message .= $file['#parents'][0];
         }
