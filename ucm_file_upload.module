@@ -154,8 +154,8 @@ function ucm_file_upload_user_default_permissions() {
     'name' => 'upload files',
     'roles' => array(
       0 => 'administrator',
-      1 => 'site manager',
-      2 => 'content editor',
+      1 => 'Site Manager',
+      2 => 'Content Editor',
     ),
     'module' => 'ucm_file_upload',
   );
