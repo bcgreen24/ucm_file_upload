@@ -75,7 +75,7 @@ function ucm_file_upload_submit($form, &$form_state){
     if ($_FILES['files']){
         $files = reArrayFiles($_FILES['files']);
     }else{
-        $message = "No file uploaded";
+        $message = "No file uploaded<br/>";
         drupal_set_message($message);
         return;
     }
@@ -95,21 +95,21 @@ function ucm_file_upload_submit($form, &$form_state){
         }//end of error if block
       else
         {
-        if (file_exists($base_path . "files/" . $file["name"]))
+        if (file_exists(DRUPAL_ROOT . "/files/" . $file["name"]))
           {
-          $message .= $file["name"] . " already exists. ";
+          $message .= $file["name"] . " already exists. <br/>";
           }//end of file_exists if block
         else
           {
           move_uploaded_file($file["tmp_name"],
-          $base_path . "files/" . $file["name"]);
-          $message .= "Stored in: " . $base_path . "files/" . $file["name"];
+          DRUPAL_ROOT . "/files/" . $file["name"]);
+          $message .= "Stored in: " . DRUPAL_ROOT . "/files/" . $file["name"] . "<br/>";
           }//end of file_exists else block
         }//end of error else block
       }//end of MIME if block
     else
       {
-      $message .= "Invalid file";
+      $message .= "Invalid file<br/>";
       }
     }//end of foreach block
     drupal_set_message($message);
