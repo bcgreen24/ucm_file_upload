@@ -35,6 +35,13 @@ function ucm_file_upload_menu(){
 }
 
 function ucm_file_upload_form($form, &$form_state){
+    $form['box'] = array(
+      '#type' => 'fieldset',
+        '#title' => t('File Uploads'),
+        '#prefix' => '<div id="upload_form">',
+        '#suffix' => '</div>',
+    );
+    
     $form['file1'] = array(
        '#name' => 'files[]',
        '#type' => 'file',
@@ -59,12 +66,20 @@ function ucm_file_upload_form($form, &$form_state){
       '#size' => 22,
     );
         
-            $form['file5'] = array(
+       $form['file5'] = array(
        '#name' => 'files[]',
        '#type' => 'file',
       '#size' => 22,
     );
     
+    $form['add_button'] = array(
+      '#name' => 'add_file_uploader',
+      '#executes_submit_callback' => FALSE,
+        '#value' => t('Add File Uploader'),
+        '#type' => 'button',
+        '#button_type' => 'add_file_uploader',
+    );     
+            
     $form['submit'] = array(
        '#type' => 'submit',
         '#value' => t('Upload files'),
