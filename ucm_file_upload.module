@@ -60,16 +60,16 @@ function ucm_file_upload_submit($form, &$form_state){
     
     foreach($form_state['complete form'] as $file){
         if($file['#type'] == 'file'){
-//            $file = file_save_upload($file['#parents'][0]);
-//            if($file){
-//                if($file = file_move($file, 'public://')){
-//                   $form_state['values']['file'] = $file;
-//                   $message .= "File uploaded! Use this URL: /files/" . $file->filename . "<br/>";                   
-//                }
-//            }else{
-//              $message .= "Error uploading file [" . $file['#parents'][0] . "]; please try again later.<br/>" ; 
-//            }
-            $message .= $file['#parents'][0];
+            $file2 = file_save_upload($file['#parents'][0]);
+            if($file2){
+                if($file2 = file_move($file, 'public://')){
+                   $form_state['values']['file'] = $file2;
+                   $message .= "File uploaded! Use this URL: /files/" . $file2->filename . "<br/>";                   
+                }
+            }else{
+              $message .= "Error uploading file; please try again later.<br/>" ; 
+            }
+            //$message .= $file['#parents'][0];
         }
     }
     drupal_set_message($message);
