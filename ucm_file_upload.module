@@ -48,6 +48,7 @@ function ucm_file_upload_form($form, &$form_state){
        '#name' => 'files[]',
        '#type' => 'file',
        '#size' => 22,
+        '#prefix' => '<div id="file_inputs">',
     );
     
     $form['file2'] = array(
@@ -72,6 +73,7 @@ function ucm_file_upload_form($form, &$form_state){
        '#name' => 'files[]',
        '#type' => 'file',
       '#size' => 22,
+       '#suffix' => '</div>',
     );
     
             
