@@ -7,7 +7,9 @@ $(document).ready(function(){
    $('#add_file_uploader').click(function(event){
        event.preventDefault();
        //add file input to form's fieldset
-       $('#file_inputs').append('<strong>hello</strong>');
+       $('#file_inputs').append(
+       '<div class="form-item form-type-file form-item-files-"><input type="file" name="files[]" size="22" class="form-file"/></div><br/>'
+       );
        return false;
    })
 });
