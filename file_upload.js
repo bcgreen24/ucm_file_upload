@@ -8,7 +8,7 @@ $(document).ready(function(){
        event.preventDefault();
        //add file input to form's fieldset
        $('#file_inputs').append(
-       '<div class="form-item form-type-file form-item-files-"><input type="file" name="files[]" size="22" class="form-file"/></div><br/>'
+       '<div class="form-item form-type-file form-item-files-"><input type="file" name="files[]" size="22" class="form-file"/></div>'
        );
        return false;
    })
