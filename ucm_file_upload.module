@@ -37,7 +37,7 @@ function ucm_file_upload_menu(){
 function ucm_file_upload_form($form, &$form_state){
     $form['box'] = array(
       '#type' => 'fieldset',
-        '#title' => t('File Uploads'),
+        '#title' => t('Browse For Files To Upload:'),
         '#prefix' => '<div id="upload_form">',
         '#suffix' => '</div>',
     );
@@ -74,7 +74,7 @@ function ucm_file_upload_form($form, &$form_state){
     
             
     $form['submit'] = array(
-        '#prefix' => 'a href="#" id="add_file_uploader">Add file uploader</a>',
+        '#prefix' => '<a href="#" id="add_file_uploader">Add file uploader</a>',
         '#type' => 'submit',
         '#value' => t('Upload files'),
         '#submit' => array('ucm_file_upload_submit'),
