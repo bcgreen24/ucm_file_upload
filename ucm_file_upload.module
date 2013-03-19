@@ -63,7 +63,7 @@ function ucm_file_upload_submit($form, &$form_state){
             $file2 = file_save_upload($file['#parents'][0]);
             if($file2){
                 if($file2 = file_move($file, 'public://')){
-                   $form_state['values']['file'] = $file2;
+                   //$form_state['values']['file'] = $file2;
                    $message .= "File uploaded! Use this URL: /files/" . $file2->filename . "<br/>";                   
                 }
             }else{
