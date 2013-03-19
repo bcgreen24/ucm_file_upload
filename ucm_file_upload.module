@@ -115,7 +115,9 @@ function ucm_file_upload_submit($form, &$form_state){
       }//end of MIME if block
     else
       {
-      $message .= "Invalid file<br/>";
+        if($file["type"] != "" ){
+           $message .= "Invalid file<br/>"; 
+        }
       }
     }//end of foreach block
     drupal_set_message($message);
