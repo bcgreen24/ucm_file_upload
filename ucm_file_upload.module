@@ -70,6 +70,7 @@ function ucm_file_upload_form($form, &$form_state){
 
 function ucm_file_upload_submit($form, &$form_state){
     $message = "";
+    $base_path = drupal_realpath("public://");
     $allowedExts = array("gif", "jpeg", "jpg", "png", "pdf", "doc", "docx");
     //IF THE FILES ARRAY EXISTS, CONVERT IT TO A NICER ARRAY FORMAT
     if ($_FILES['files']){
@@ -86,7 +87,7 @@ function ucm_file_upload_submit($form, &$form_state){
        || ($file["type"] == "image/jpeg")
        || ($file["type"] == "image/jpg")
        || ($file["type"] == "image/png"))
-       && ($file["size"] < 20000)
+       && ($file["size"] < 10000000)
        && in_array($extension, $allowedExts))
       {
       if ($file["error"] > 0)
@@ -95,15 +96,14 @@ function ucm_file_upload_submit($form, &$form_state){
         }//end of error if block
       else
         {
-        if (file_exists(DRUPAL_ROOT . "/files/" . $file["name"]))
+        if (file_exists($base_path . "/files/" . $file["name"]))
           {
           $message .= $file["name"] . " already exists. <br/>";
           }//end of file_exists if block
         else
           {
-          move_uploaded_file($file["tmp_name"],
-          DRUPAL_ROOT . "/files/" . $file["name"]);
-          $message .= "Stored in: " . DRUPAL_ROOT . "/files/" . $file["name"] . "<br/>";
+          move_uploaded_file($file["tmp_name"], $base_path . "/" . $file["name"]);
+          $message .= "Stored in: /files/" . $file["name"] . "<br/>";
           }//end of file_exists else block
         }//end of error else block
       }//end of MIME if block
