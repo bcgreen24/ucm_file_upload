@@ -4,7 +4,7 @@
  */
 
 $(document).ready(function(){
-   $('.form-add_file_uploader').click(function(){
+   $('#edit-add-button').click(function(){
        alert('hello');
    })
 });
