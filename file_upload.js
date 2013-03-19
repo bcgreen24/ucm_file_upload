@@ -5,7 +5,8 @@
 
 $(document).ready(function(){
    $('#add_file_uploader').click(function(event){
-       event.preventDefault();
+       event.stopImmediatePropagation();
        alert('hello');
+       return false;
    })
 });

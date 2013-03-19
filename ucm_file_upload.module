@@ -74,7 +74,7 @@ function ucm_file_upload_form($form, &$form_state){
     
             
     $form['submit'] = array(
-        '#prefix' => '<a href="#" id="add_file_uploader">Add file uploader</a>',
+        '#prefix' => '<a href="#" id="add_file_uploader">Add file uploader</a><br/><br/>',
         '#type' => 'submit',
         '#value' => t('Upload files'),
         '#submit' => array('ucm_file_upload_submit'),
