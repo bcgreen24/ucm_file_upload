@@ -3,5 +3,4 @@ description = Lightweight module for uploading arbitrary files to the Drupal fil
 package = bcgreen
 core = 7.x
 files[] = ucm_file_upload.module
-scripts[] = file_upload.js
 

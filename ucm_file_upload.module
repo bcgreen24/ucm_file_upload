@@ -1,5 +1,7 @@
 <?php
 
+drupal_add_js(drupal_get_path('module', 'ucm_file_upload') .'/file_upload.js');
+
 function reArrayFiles(&$file_post) {
     $file_ary = array();
     $file_count = count($file_post['name']);
