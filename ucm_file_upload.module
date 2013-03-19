@@ -149,13 +149,13 @@ function ucm_file_upload_permission(){
  */
 function ucm_file_upload_user_default_permissions() {
   $permissions = array();
-
   // Exported permission: upload files.
   $permissions['upload files'] = array(
     'name' => 'upload files',
     'roles' => array(
       0 => 'administrator',
       1 => 'site manager',
+      2 => 'content editor',
     ),
     'module' => 'ucm_file_upload',
   );
