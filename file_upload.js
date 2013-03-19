@@ -6,11 +6,12 @@
 $(document).ready(function(){
    $('#add_file_uploader').click(function(){
        //add file input to form's fieldset
-       ('#edit-box').add('<strong>hello</strong>'
-       
-       );
+       ('#edit-box').add('<strong>hello</strong>');
        return false;
    })
 });
 })(jQuery);;
+
+
+
 
