@@ -3,7 +3,7 @@
  * and open the template in the editor.
  */
 
-$(document).ready(function(){
+jQuery(document).ready(function(){
    //$('#add_file_uploader').click(function(){
        alert('hello');
        //return false;
