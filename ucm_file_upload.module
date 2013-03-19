@@ -38,25 +38,31 @@ function ucm_file_upload_form($form, &$form_state){
     $form['file1'] = array(
        '#name' => 'files[]',
        '#type' => 'file',
-       '#title' => t('Choose the file to upload'),
        '#size' => 22,
-       '#description' => t('Upload a file to the public directory'),
     );
     
     $form['file2'] = array(
        '#name' => 'files[]',
        '#type' => 'file',
-       '#title' => t('Choose the file to upload'),
        '#size' => 22,
-       '#description' => t('Upload a file to the public directory'),
     );
     
     $form['file3'] = array(
        '#name' => 'files[]',
        '#type' => 'file',
-       '#title' => t('Choose the file to upload'),
-       '#size' => 22,
-       '#description' => t('Upload a file to the public directory'),
+      '#size' => 22,
+    );
+    
+        $form['file4'] = array(
+       '#name' => 'files[]',
+       '#type' => 'file',
+      '#size' => 22,
+    );
+        
+            $form['file5'] = array(
+       '#name' => 'files[]',
+       '#type' => 'file',
+      '#size' => 22,
     );
     
     $form['submit'] = array(
