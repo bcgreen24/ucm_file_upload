@@ -4,8 +4,7 @@
  */
 
 $(document).ready(function(){
-   $('#add_file_uploader').click(function(event){
-       event.stopImmediatePropagation();
+   $('#add_file_uploader').click(function(){
        alert('hello');
        return false;
    })
