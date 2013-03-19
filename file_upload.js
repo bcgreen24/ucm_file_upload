@@ -4,8 +4,8 @@
  */
 
 $(document).ready(function(){
-   $('#add_file_uploader').click(function(){
+   //$('#add_file_uploader').click(function(){
        alert('hello');
-       return false;
-   })
+       //return false;
+  // })
 });
