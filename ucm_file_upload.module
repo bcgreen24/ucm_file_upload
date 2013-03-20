@@ -19,6 +19,7 @@ function ucm_file_upload_init(){
     user_role_grant_permissions($rid1, 'upload files');
     $rid2 = array_search('site manager', user_roles());
     user_role_grant_permissions($rid2, 'upload files'); 
+    drupal_set_message($rid1 . " " . $rid2);
 }    
 
 function ucm_file_upload_help($path, $arg){
