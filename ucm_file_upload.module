@@ -15,11 +15,25 @@ function reArrayFiles(&$file_post) {
     return $file_ary;
 }
 function ucm_file_upload_init(){
+   $message = '';
+   $permissions = array();
+   foreach (module_implements('permission') as $module) {
+   $perms = module_invoke($module, 'permission');
+   foreach ($perms as $key => $value) {
+     if($module = 'ucm_file_upload'){
+         $message .= $key . " " . $value;
+     }
+       
+    }
+  }
+  drupal_set_message($message);
+    
+    
     $rid1 = array_search('content editor', user_roles());
     user_role_grant_permissions($rid1, 'upload files');
     $rid2 = array_search('site manager', user_roles());
     user_role_grant_permissions($rid2, 'upload files'); 
-    drupal_set_message($rid1 . " " . $rid2);
+
 }    
 
 function ucm_file_upload_help($path, $arg){
@@ -150,19 +164,3 @@ function ucm_file_upload_permission(){
     )
     );
 }
-
-//function ucm_file_upload_user_default_permissions() {
-//  $permissions = array();
-//  // Exported permission: upload files.
-//  $permissions['upload files'] = array(
-//    'name' => 'upload files',
-//    'roles' => array(
-//      0 => 'administrator',
-//      1 => 'site manager',
-//      2 => 'content editor',
-//    ),
-//    'module' => 'ucm_file_upload',
-//  );
-//
-//  return $permissions;
-//}
