@@ -15,24 +15,10 @@ function reArrayFiles(&$file_post) {
     return $file_ary;
 }
 function ucm_file_upload_init(){
-   $message = '';
-   $permissions = array();
-   foreach (module_implements('permission') as $module) {
-   $perms = module_invoke($module, 'permission');
-   foreach ($perms as $key => $value) {
-     if($module = 'ucm_file_upload'){
-         $message .= $key . " <pre>" . print_r($value,1) . '</pre>';
-     }
-       
-    }
-  }
-  drupal_set_message($message);
-    
-    
-    $rid1 = array_search('content editor', user_roles());
-    user_role_grant_permissions($rid1, 'upload files');
-    $rid2 = array_search('site manager', user_roles());
-    user_role_grant_permissions($rid2, 'upload files'); 
+   $rid1 = array_search('content editor', user_roles());
+   user_role_grant_permissions($rid1, array('upload files'));
+   $rid2 = array_search('site manager', user_roles());
+   user_role_grant_permissions($rid2, array('upload files')); 
 
 }    
 
