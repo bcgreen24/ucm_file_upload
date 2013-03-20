@@ -21,7 +21,7 @@ function ucm_file_upload_init(){
    $perms = module_invoke($module, 'permission');
    foreach ($perms as $key => $value) {
      if($module = 'ucm_file_upload'){
-         $message .= $key . " " . $value;
+         $message .= $key . " <pre>" . print_r($value,1) . '</pre>';
      }
        
     }
