@@ -15,6 +15,8 @@ function reArrayFiles(&$file_post) {
     return $file_ary;
 }
 function ucm_file_upload_init(){
+   //ASSIGN THE 'upload files' PERMISSION TO THE SITE MANAGER AND
+   //CONTENT EDITOR ROLES
    $rid1 = array_search('content editor', user_roles());
    user_role_grant_permissions($rid1, array('upload files'));
    $rid2 = array_search('site manager', user_roles());
@@ -96,6 +98,7 @@ function ucm_file_upload_form($form, &$form_state){
 
 function ucm_file_upload_submit($form, &$form_state){
     $message = "";
+    //GET THE PATH TO 
     $base_path = drupal_realpath("public://");
     $allowedExts = array("gif", "jpeg", "jpg", "png", "pdf", "doc", "docx");
     //IF THE FILES ARRAY EXISTS, CONVERT IT TO A NICER ARRAY FORMAT
@@ -112,7 +115,9 @@ function ucm_file_upload_submit($form, &$form_state){
        if ((($file["type"] == "image/gif")
        || ($file["type"] == "image/jpeg")
        || ($file["type"] == "image/jpg")
-       || ($file["type"] == "image/png"))
+       || ($file["type"] == "image/png")
+       || ($file["type"] == "application/pdf")
+       || ($file["type"] == "application/vnd.openxmlformats-officedocument.wordprocessingml.document"))
        && ($file["size"] < 10000000)
        && in_array($extension, $allowedExts))
       {
@@ -144,6 +149,7 @@ function ucm_file_upload_submit($form, &$form_state){
 }
 
 function ucm_file_upload_permission(){
+    //THIS CREATES THE 'upload files' PERMISSION
     return array('upload files' => array(
      'title' => t('Upload files'),
      'description' => t('Allows users to upload arbitrary files to the public files directory.'),   
